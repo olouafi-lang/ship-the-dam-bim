@@ -6,7 +6,8 @@
 
 # 🚢 Ship the BIM
 
-**Ship the BIM** is an AI-powered BIM (Building Information Modeling) quality assurance platform that validates IFC files against configurable compliance profiles. It combines deterministic rule checking with LLM-powered analysis to ensure your BIM models are ready for delivery.
+**Ship the BIM** is an AI-powered IFC (Industry Foundation Classes) validation and delivery-readiness engine designed for BIM (Building Information Modeling) coordination workflows. It evaluates models against configurable rule profiles using deterministic validation logic and optional LLM-supported analysis for terminology and guidance generation.
+The tool outputs structured issue datasets, readiness scoring, and fix instructions that can be consumed by dashboards, reports, or external collaboration workflows.
 
 ## ✨ Features
 
@@ -320,7 +321,7 @@ This project is licensed under the MIT License.
 
 ## 👥 Team
 
-* **Mia** 🧙‍♀️✨ (Making magic happen)
+* **Mia** 🧙‍♀️✨ (Product Witchcraft)
 * **Irfan** 🚀🔥 (Shipping at lightspeed)
 * **Nagasai** 🧠💡 (The Big Brain)
 * **Levin** 🥷👾 (The Code Ninja)
