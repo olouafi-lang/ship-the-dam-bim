@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Things I experimented with Claude this week</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f5f2;--ink:#17232e;--soft:#586773;--rule:#cfd6d5;--blue:#1d5c86;--wash:#e3eef5;--red:#b3261e;--redwash:#fbe5e3;--green:#1f7a4d;--greenwash:#e2f2e9;--amber:#9a6200;--amberwash:#fbefd6}
+*{box-sizing:border-box;margin:0}
+body{background:#888;font-family:"IBM Plex Sans",sans-serif;color:var(--ink);display:flex;flex-direction:column;gap:24px;padding:24px;align-items:center}
+.slide{width:1080px;height:1350px;background:var(--paper);padding:88px 84px 76px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.slide.dark{background:var(--ink);color:var(--paper)}
+.slide.blue{background:var(--blue);color:#fff}
+.no{font:500 26px "IBM Plex Mono",monospace;letter-spacing:.04em;color:var(--blue)}
+.dark .no{color:#7db9de}.blue .no{color:#cfe4f1}
+h1{font:700 118px/1.0 "IBM Plex Sans Condensed",sans-serif;letter-spacing:-.01em;text-wrap:balance}
+h2{font:700 92px/1.03 "IBM Plex Sans Condensed",sans-serif;margin-top:64px;text-wrap:balance}
+p{font-size:45px;line-height:1.34;margin-top:50px;max-width:900px}
+p.small{font-size:36px;color:var(--soft)}
+.dark p.small{color:#9aa9b4}.blue p.small{color:#d6e8f3}
+b{font-weight:600}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font:500 24px "IBM Plex Mono",monospace;color:var(--soft);border-top:2px solid currentColor;padding-top:20px}
+.dark .foot{color:#9aa9b4}.blue .foot{color:#d6e8f3}
+.stamp{display:inline-flex;align-items:center;gap:12px;font:600 26px "IBM Plex Sans";text-transform:uppercase;letter-spacing:.06em;padding:8px 18px;border:3px solid;border-radius:3px}
+.stamp::before{content:"";width:16px;height:16px;background:currentColor}
+.stamp.red{color:var(--red);background:var(--redwash)}.stamp.green{color:var(--green);background:var(--greenwash)}.stamp.green::before{border-radius:50%}
+.big{font:700 250px/0.9 "IBM Plex Sans Condensed";color:var(--red);margin-top:80px}
+.big small{font:500 48px "IBM Plex Sans";color:var(--ink);display:block;margin-top:18px;line-height:1.25}
+table{border-collapse:collapse;width:100%;margin-top:64px;font-size:37px}
+th{font:600 22px "IBM Plex Sans";text-transform:uppercase;letter-spacing:.08em;text-align:left;color:var(--soft);padding:12px 14px;border-bottom:3px solid var(--ink)}
+td{padding:30px 14px;border-bottom:1.5px solid var(--rule);vertical-align:top;line-height:1.25}
+td:first-child{font:500 23px "IBM Plex Mono";color:var(--soft);text-transform:uppercase;width:180px;padding-top:40px}
+td.was{color:var(--soft);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+td.is{font-weight:600}
+.shot{margin-top:36px;border:2px solid var(--ink);background:#fff;box-shadow:14px 14px 0 var(--blue)}
+.shot img{display:block;width:100%}
+ul{list-style:none;padding:0;margin-top:56px;display:flex;flex-direction:column;gap:0}
+li{font-size:43px;line-height:1.3;padding:34px 0;border-bottom:1.5px solid rgba(255,255,255,.3);display:flex;gap:26px}
+li span{font:500 28px "IBM Plex Mono";padding-top:12px;opacity:.75}
+.light li{border-color:var(--rule)}
+.grid{margin-top:56px;border:3px solid var(--ink);background:#fff;box-shadow:16px 16px 0 var(--blue);display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr}
+.grid div{padding:22px 14px;border-bottom:1.5px solid var(--rule);font:500 24px "IBM Plex Mono";display:flex;align-items:center}
+.grid .h{font:600 19px "IBM Plex Sans";text-transform:uppercase;letter-spacing:.06em;color:var(--soft);border-bottom:3px solid var(--ink)}
+.grid .v{font:600 18px "IBM Plex Sans";text-transform:uppercase;letter-spacing:.04em;justify-content:center;margin:14px 8px;padding:10px 4px;border:2.5px solid;border-radius:3px;text-align:center}
+.v.r{color:var(--red);background:var(--redwash)}.v.g{color:var(--green);background:var(--greenwash)}.v.a{color:var(--amber);background:var(--amberwash)}
+.arrow{font:700 44px "IBM Plex Sans Condensed"}
+</style></head><body>
+
+<section class="slide dark" id="s1">
+  <div class="no">BEYOND BLUEPRINTS · NOTES</div>
+  <h1 style="margin-top:210px">things I experimented with Claude this week</h1>
+  <p>I handed it a hackathon project I was proud of and one interview that disagreed with it.</p>
+  <div class="foot"><span>01 / 08</span><span class="arrow">swipe →</span></div>
+</section>
+
+<section class="slide" id="s2">
+  <div class="no">01 · AUDIT MY OLD PROJECT</div>
+  <h2>I asked it to run our old code and read the output.</h2>
+  <p>Last winter we built a model checker in a weekend. It had a button that fixed your file.</p>
+  <p>Claude opened the fixed file. Our tool had labelled a <b>living room</b> and an <b>entry hall</b> as “Office”, because that was first on the list of allowed values.</p>
+  <p class="small">The readiness score went up.</p>
+  <div class="foot"><span>02 / 08</span><span>Ship the BIM, Feb 2026</span></div>
+</section>
+
+<section class="slide" id="s3">
+  <div class="no">02 · COUNT WHAT IS REAL</div>
+  <h2>Then it checked every issue our tool reported.</h2>
+  <div class="big">12 of 16<small>were produced by our own bugs.<br>Only 4 were real.</small></div>
+  <p class="small">One rule failed every room in every model. Nobody had tested it on a file with a known answer.</p>
+  <div class="foot"><span>03 / 08</span><span>same sample model</span></div>
+</section>
+
+<section class="slide blue" id="s4">
+  <div class="no">03 · READ ONE INTERVIEW</div>
+  <h2>I asked an engineer about language problems.</h2>
+  <p>They told me about software versions instead.</p>
+  <ul>
+    <li><span>A</span><div>One team, one model, two versions of an export plug-in. The client spotted the difference.</div></li>
+    <li><span>B</span><div>A supplier’s old software could not open the file. Ten variants sent before one worked.</div></li>
+  </ul>
+  <p class="small">About a week each. Both found by the person receiving.</p>
+  <div class="foot"><span>04 / 08</span><span>n = 1, paraphrased</span></div>
+</section>
+
+<section class="slide" id="s5">
+  <div class="no">04 · ASSUMED VS HEARD</div>
+  <h2>It put my assumption next to the evidence.</h2>
+  <table>
+    <tr><th></th><th>I assumed</th><th>I heard</th></tr>
+    <tr><td>Cause</td><td class="was">Language and naming</td><td class="is">Software versions</td></tr>
+    <tr><td>Breaks at</td><td class="was">Property names</td><td class="is">Export and import</td></tr>
+    <tr><td>Found by</td><td class="was">The modeller</td><td class="is">The client</td></tr>
+    <tr><td>How often</td><td class="was">Every delivery</td><td class="is">Once, and it cost a week</td></tr>
+  </table>
+  <p class="small">The file was fine. The two ends of the exchange were different.</p>
+  <div class="foot"><span>05 / 08</span><span>one interview is a direction to test</span></div>
+</section>
+
+<section class="slide" id="s6">
+  <div class="no">05 · REBUILD THE PRODUCT</div>
+  <h2>So we built the check that was missing.</h2>
+  <p>Every export against every recipient, before sending.</p>
+  <div class="grid">
+    <div class="h">Export</div><div class="h">Fabricator</div><div class="h">Client</div><div class="h">FM consultant</div>
+    <div>modeller A · IFC4</div><div class="v r">Blocked</div><div class="v g">No known blockers</div><div class="v a">Check first</div>
+    <div>modeller B · IFC4</div><div class="v r">Blocked</div><div class="v r">Blocked</div><div class="v r">Blocked</div>
+    <div>for fabricator · 2x3</div><div class="v g">No known blockers</div><div class="v r">Blocked</div><div class="v a">Check first</div>
+  </div>
+  <p class="small" style="margin-top:70px">Runs in the browser. Uploads nothing. Fixes nothing. Demo data shown.</p>
+  <div class="foot"><span>06 / 08</span><span>prototype: Handshake</span></div>
+</section>
+
+<section class="slide dark" id="s7">
+  <div class="no">06 · MAKE IT PROVE ITSELF</div>
+  <h2>This time the tests came before the interface.</h2>
+  <ul>
+    <li><span>01</span><div>Its file reader is compared with a reference library on 4 models.</div></li>
+    <li><span>02</span><div>49 automated checks, all passing.</div></li>
+    <li><span>03</span><div>It lists what it cannot verify, and says so on screen.</div></li>
+    <li><span>04</span><div>Then: a retrospective, a playbook, a research report and an essay.</div></li>
+  </ul>
+  <div class="foot"><span>07 / 08</span><span>one working session</span></div>
+</section>
+
+<section class="slide light" id="s8">
+  <div class="no">WHAT I AM KEEPING</div>
+  <h2>Three rules from the week.</h2>
+  <ul class="light">
+    <li><span>1</span><div>Ask about the last time it went wrong <b>before</b> choosing the problem.</div></li>
+    <li><span>2</span><div>Open every file your tool produces and read it.</div></li>
+    <li><span>3</span><div>A tool that edits needs a higher bar than a tool that reports.</div></li>
+  </ul>
+  <p>Next: showing it to the engineer who lost those two weeks.</p>
+  <div class="foot"><span>08 / 08</span><span>Mia · Beyond Blueprints</span></div>
+</section>
+</body></html>

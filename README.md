@@ -6,6 +6,9 @@
 
 # 🚢 Ship the BIM
 
+> **November 2026 update.** This project was reviewed nine months on. The review found defects in the scanner and the auto-fix feature, and a practitioner interview pointed at a different problem. See the [retrospective and follow-on documents](docs/README.md) and the rebuilt prototype, [Handshake](handshake/README.md). The description below is the original hackathon README and overstates what the code does.
+
+
 **Ship the BIM** is an AI-powered BIM (Building Information Modeling) quality assurance platform that validates IFC files against configurable compliance profiles. It combines deterministic rule checking with LLM-powered analysis to ensure your BIM models are ready for delivery.
 
 ## ✨ Features
